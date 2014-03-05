@@ -24,14 +24,14 @@ namespace Wintellect.PowerCollections
     /// The Hash manages items of type T, and uses a IComparer&lt;ItemTYpe&gt; that
     /// hashes compares items to hash items into the table.  
     ///</remarks>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
 #endif
 
     internal class Hash<T> : IEnumerable<T>
-#if !(SILVERLIGHT || PCL)
+#if !(PCL)
     , ISerializable, IDeserializationCallback
 #endif
     {
@@ -57,7 +57,7 @@ namespace Wintellect.PowerCollections
 
         private const int MINSIZE = 16;       // minimum number of slots.
 
-#if !(SILVERLIGHT || PCL)
+#if !(PCL)
         private SerializationInfo serializationInfo;       // Info used during deserialization.
 #endif
 
@@ -612,7 +612,7 @@ namespace Wintellect.PowerCollections
 
         #region Serialization
 
-        #if !(SILVERLIGHT || PCL)
+        #if !(PCL)
 
         /// <summary>
         /// Serialize the hash table. Called from the serialization infrastructure.

@@ -25,13 +25,13 @@ namespace Wintellect.PowerCollections
     /// <typeparam name="TValue">The of values associated with the keys.</typeparam>
     ///<seealso cref="MultiDictionary&lt;TKey,TValue&gt;"/>
     ///<seealso cref="OrderedDictionary&lt;TKey,TValue&gt;"/>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
 #endif
     public class OrderedMultiDictionary<TKey, TValue> : MultiDictionaryBase<TKey, TValue>
-#if !(SILVERLIGHT || PCL)
+#if !(PCL)
         , ICloneable
 #endif
     {
@@ -535,7 +535,7 @@ namespace Wintellect.PowerCollections
 
         #region Cloning
        
-#if !(SILVERLIGHT || PCL)
+#if !(PCL)
 
         /// <summary>
         /// Makes a shallow clone of this dictionary; i.e., if keys or values of the
@@ -641,7 +641,7 @@ namespace Wintellect.PowerCollections
         /// A private class that implements ICollection&lt;KeyValuePair&lt;TKey,TValue&gt;&gt; and ICollection for the
         /// KeyValuePairs collection. The collection is read-only.
         /// </summary>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
@@ -801,7 +801,7 @@ namespace Wintellect.PowerCollections
         /// }
         ///</code>
         ///</remarks>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]

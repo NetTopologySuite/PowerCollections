@@ -36,7 +36,7 @@ namespace Wintellect.PowerCollections
 	/// in the tree. Insert, Delete, and Find operations are provided in their full generality;
 	/// all operations allow dealing with either the first or last of items that compare equal. 
     ///</remarks>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
@@ -78,7 +78,7 @@ namespace Wintellect.PowerCollections
         /// <summary>
 		/// The class that is each node in the red-black tree.
         /// </summary>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]

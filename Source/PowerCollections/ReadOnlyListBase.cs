@@ -19,7 +19,7 @@ namespace Wintellect.PowerCollections
     /// of all the other methods in IList&lt;T&gt; and IList are handled by ListBase.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]

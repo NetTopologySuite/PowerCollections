@@ -31,13 +31,13 @@ namespace Wintellect.PowerCollections
     /// the keys in sorted order.</p>
     ///</remarks>
     ///<seealso cref="Bag&lt;T&gt;"/>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
 #endif
     public class OrderedBag<T> : CollectionBase<T>
-#if !(SILVERLIGHT || PCL)
+#if !(PCL)
         , ICloneable
 #endif
     {
@@ -163,7 +163,7 @@ namespace Wintellect.PowerCollections
             return newBag;
         }
 
-#if !(SILVERLIGHT || PCL)
+#if !(PCL)
 
         /// <summary>
         /// Makes a shallow clone of this bag; i.e., if items of the
@@ -1152,7 +1152,7 @@ namespace Wintellect.PowerCollections
         /// The nested class that provides a read-only list view
         /// of all or part of the collection.
         /// </summary>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
@@ -1382,7 +1382,7 @@ namespace Wintellect.PowerCollections
         /// }
         ///</code>
         ///</remarks>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]

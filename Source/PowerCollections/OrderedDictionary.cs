@@ -27,13 +27,13 @@ namespace Wintellect.PowerCollections
 	/// the keys in sorted order.</p>
 	///</remarks>
     ///<seealso cref="Dictionary&lt;TKey,TValue&gt;"/>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
 #endif
     public class OrderedDictionary<TKey,TValue>: DictionaryBase<TKey,TValue>
-#if !(SILVERLIGHT || PCL)
+#if !(PCL)
         , ICloneable
 #endif
     {
@@ -201,7 +201,7 @@ namespace Wintellect.PowerCollections
             throw new InvalidOperationException(string.Format(Strings.TypeNotCloneable, t.FullName));
         }
 
-#if !(SILVERLIGHT || PCL)
+#if !(PCL)
 
         /// <summary>
 		/// Makes a deep clone of this dictionary. A new dictionary is created with a clone of
@@ -627,7 +627,7 @@ namespace Wintellect.PowerCollections
 
 		#region ICloneable Members
         
-#if !(SILVERLIGHT || PCL)
+#if !(PCL)
 
 		/// <summary>
 		/// Implements ICloneable.Clone. Makes a shallow clone of this dictionary; i.e., if keys or values are reference types, then they are not cloned.
@@ -657,7 +657,7 @@ namespace Wintellect.PowerCollections
         /// }
         ///</code>
         ///</remarks>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]

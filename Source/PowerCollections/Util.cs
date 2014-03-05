@@ -27,7 +27,7 @@ namespace Wintellect.PowerCollections
         public static bool IsCloneableType(Type type, out bool isValue)
         {
             isValue = false;
-#if (SILVERLIGHT || PCL)
+#if (PCL)
 
             return false;
 #else
@@ -64,7 +64,7 @@ namespace Wintellect.PowerCollections
         /// Wrap an enumerable so that clients can't get to the underlying 
         /// implementation via a down-cast.
         /// </summary>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]

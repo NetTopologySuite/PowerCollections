@@ -51,7 +51,7 @@ namespace Wintellect.PowerCollections
         /// cause the count to change also; insertions and deletions directly on
         /// the wrapped list do not.
         /// </summary>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
@@ -186,7 +186,7 @@ namespace Wintellect.PowerCollections
         /// cause the count to change up to the size of the underlying array. Elements
         /// fall off the end of the underlying array.
         /// </summary>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
@@ -310,7 +310,7 @@ namespace Wintellect.PowerCollections
         /// Methods that modify the collection throw a NotSupportedException, methods that don't
         /// modify are fowarded through to the wrapped collection.
         /// </summary>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
@@ -392,7 +392,7 @@ namespace Wintellect.PowerCollections
         /// Methods that modify the list throw a NotSupportedException, methods that don't
         /// modify are fowarded through to the wrapped list.
         /// </summary>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
@@ -492,7 +492,7 @@ namespace Wintellect.PowerCollections
         /// The private class that implements a read-only wrapped for
         /// IDictionary &lt;TKey,TValue&gt;.
         /// </summary>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
@@ -610,7 +610,7 @@ namespace Wintellect.PowerCollections
         ///  The class that provides a typed IEnumerator&lt;T&gt;
         /// view onto an untyped IEnumerator interface.
         /// </summary>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
@@ -660,7 +660,7 @@ namespace Wintellect.PowerCollections
         /// The class that provides a typed IEnumerable&lt;T&gt; view
         /// onto an untyped IEnumerable interface.
         /// </summary>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
@@ -721,7 +721,7 @@ namespace Wintellect.PowerCollections
         /// onto an untyped ICollection interface. The ICollection&lt;T&gt;
         /// is read-only.
         /// </summary>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
@@ -821,7 +821,7 @@ namespace Wintellect.PowerCollections
         /// The class used to create a typed IList&lt;T&gt; view onto
         /// an untype IList interface.
         /// </summary>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
@@ -927,7 +927,7 @@ namespace Wintellect.PowerCollections
         /// The class that is used to provide an untyped ICollection
         /// view onto a typed ICollection&lt;T&gt; interface.
         /// </summary>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
@@ -1018,7 +1018,7 @@ namespace Wintellect.PowerCollections
         /// The class that implements a non-generic IList wrapper
         /// around a generic IList&lt;T&gt; interface.
         /// </summary>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
@@ -1180,7 +1180,7 @@ namespace Wintellect.PowerCollections
         /// in a read-write way. Insertions cause the last item in the array
         /// to fall off, deletions replace the last item with the default value.
         /// </summary>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
@@ -4534,7 +4534,7 @@ namespace Wintellect.PowerCollections
         /// A private class used by the LexicographicalComparer method to compare sequences
         /// (IEnumerable) of T by there Lexicographical ordering.
         /// </summary>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
@@ -4625,7 +4625,7 @@ namespace Wintellect.PowerCollections
         /// An IComparer instance that can be used to reverse the sense of
         /// a wrapped IComparer instance.
         /// </summary>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
@@ -4684,7 +4684,7 @@ namespace Wintellect.PowerCollections
         /// for object identity only. Only Equals and GetHashCode can be used;
         /// this implementation is not appropriate for ordering.
         /// </summary>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
@@ -4778,7 +4778,7 @@ namespace Wintellect.PowerCollections
         /// class implements IEqualityComparer&lt;IEnumerable&lt;T&gt;gt; to compare
         /// two enumerables for equality, where order is significant.
         /// </summary>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
@@ -4865,7 +4865,7 @@ namespace Wintellect.PowerCollections
         /// class implements IEqualityComparer&lt;IEnumerable&lt;T&gt;gt; to compare
         /// two enumerables for equality, where order is not significant.
         /// </summary>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]

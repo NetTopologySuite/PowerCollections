@@ -28,13 +28,13 @@ namespace Wintellect.PowerCollections
     /// the items in sorted order.</p>
     ///</remarks>
     ///<seealso cref="OrderedSet&lt;T&gt;"/>
-#if SILVERLIGHT || PCL
+#if PCL
     [System.Runtime.Serialization.DataContract]
 #else
     [Serializable]
 #endif
     public class Set<T> : CollectionBase<T>, ICollection<T>
-#if !(SILVERLIGHT || PCL)
+#if !(PCL)
         , ICloneable
 #endif
     {
@@ -127,7 +127,7 @@ namespace Wintellect.PowerCollections
             return newSet;
         }
 
-#if !(SILVERLIGHT || PCL)
+#if !(PCL)
 
         /// <summary>
         /// Makes a shallow clone of this set; i.e., if items of the
