@@ -31,7 +31,7 @@ namespace Wintellect.PowerCollections
     [Serializable]
 #endif
     public class OrderedMultiDictionary<TKey, TValue> : MultiDictionaryBase<TKey, TValue>
-#if !(PCL)
+#if !PCL
         , ICloneable
 #endif
     {
@@ -535,7 +535,7 @@ namespace Wintellect.PowerCollections
 
         #region Cloning
        
-#if !(PCL)
+#if !PCL
 
         /// <summary>
         /// Makes a shallow clone of this dictionary; i.e., if keys or values of the

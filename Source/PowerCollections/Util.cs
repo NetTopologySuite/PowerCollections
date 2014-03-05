@@ -27,7 +27,7 @@ namespace Wintellect.PowerCollections
         public static bool IsCloneableType(Type type, out bool isValue)
         {
             isValue = false;
-#if (PCL)
+#if PCL
 
             return false;
 #else

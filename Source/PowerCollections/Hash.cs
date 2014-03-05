@@ -31,7 +31,7 @@ namespace Wintellect.PowerCollections
 #endif
 
     internal class Hash<T> : IEnumerable<T>
-#if !(PCL)
+#if !PCL
     , ISerializable, IDeserializationCallback
 #endif
     {
@@ -57,7 +57,7 @@ namespace Wintellect.PowerCollections
 
         private const int MINSIZE = 16;       // minimum number of slots.
 
-#if !(PCL)
+#if !PCL
         private SerializationInfo serializationInfo;       // Info used during deserialization.
 #endif
 
@@ -612,7 +612,7 @@ namespace Wintellect.PowerCollections
 
         #region Serialization
 
-        #if !(PCL)
+        #if !PCL
 
         /// <summary>
         /// Serialize the hash table. Called from the serialization infrastructure.

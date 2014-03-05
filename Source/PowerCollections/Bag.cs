@@ -38,7 +38,7 @@ namespace Wintellect.PowerCollections
     [Serializable]
 #endif
     public class Bag<T> : CollectionBase<T>
-#if !(PCL)
+#if !PCL
         , ICloneable
 #endif
     {
@@ -165,7 +165,7 @@ namespace Wintellect.PowerCollections
             return newBag;
         }
         
-#if !(PCL)
+#if !PCL
 
         /// <summary>
         /// Makes a shallow clone of this bag; i.e., if items of the

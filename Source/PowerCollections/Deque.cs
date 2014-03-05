@@ -42,7 +42,7 @@ namespace Wintellect.PowerCollections
     [Serializable]
 #endif
     public class Deque<T> : ListBase<T>
-#if !(PCL)
+#if !PCL
         , ICloneable
 #endif
     {
@@ -887,7 +887,7 @@ namespace Wintellect.PowerCollections
             return new Deque<T>(this);
         }
         
-#if !(PCL)
+#if !PCL
 
         /// <summary>
         /// Creates a new Deque that is a copy of this one.

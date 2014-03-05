@@ -34,7 +34,7 @@ namespace Wintellect.PowerCollections
     [Serializable]
 #endif
     public class OrderedSet<T> : CollectionBase<T>, ICollection<T>
-#if !(PCL)
+#if !PCL
         , ICloneable
 #endif
     {
@@ -160,7 +160,7 @@ namespace Wintellect.PowerCollections
             return newSet;
         }
 
-#if !(PCL)
+#if !PCL
 
         /// <summary>
         /// Makes a shallow clone of this set; i.e., if items of the

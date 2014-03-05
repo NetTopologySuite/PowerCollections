@@ -49,7 +49,7 @@ namespace Wintellect.PowerCollections
     [Serializable]
 #endif
     public class BigList<T>: ListBase<T>
-#if !(PCL)
+#if !PCL
         , ICloneable
 #endif
     {
@@ -635,7 +635,7 @@ namespace Wintellect.PowerCollections
             }
         }
         
-#if !(PCL)
+#if !PCL
 
         /// <summary>
         /// Creates a new BigList that is a copy of this list.
