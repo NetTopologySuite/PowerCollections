@@ -53,7 +53,7 @@
     <Optimize>true</Optimize>
     <OutputPath>$(SolutionDir)$(Configuration)\$(TargetFrameworkIdentifier)$(TargetFrameworkVersion)\$(Platform)\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
-    <DocumentationFile>$(SolutionDir)$(Configuration)\$(TargetFrameworkIdentifier)$(TargetFrameworkVersion)\$(Platform)\PowerCollections.XML</DocumentationFile>
+    <DocumentationFile>..\..\Release\v4.0\AnyCPU\PowerCollections.XML</DocumentationFile>
     <BaseAddress>1239678976</BaseAddress>
     <NoWarn>
     </NoWarn>
