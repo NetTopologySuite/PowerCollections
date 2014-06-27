@@ -36,9 +36,7 @@ namespace Wintellect.PowerCollections
     /// elements.</para>
     /// </remarks>
     /// <typeparam name="T">The type of items stored in the Deque.</typeparam>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL    
     [Serializable]
 #endif
     public class Deque<T> : ListBase<T>

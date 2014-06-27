@@ -8,7 +8,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 
 namespace Wintellect.PowerCollections
 {
@@ -16,9 +15,7 @@ namespace Wintellect.PowerCollections
     /// Stores a triple of objects within a single struct. This struct is useful to use as the
     /// T of a collection, or as the TKey or TValue of a dictionary.
     /// </summary>
-#if PCL
-    [DataContract]
-#else
+#if !PCL
     [Serializable]
 #endif
     public struct Triple<TFirst, TSecond, TThird> : IComparable, IComparable<Triple<TFirst, TSecond, TThird>>

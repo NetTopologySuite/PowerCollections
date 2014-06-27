@@ -15,9 +15,7 @@ namespace Wintellect.PowerCollections
     /// Stores a pair of objects within a single struct. This struct is useful to use as the
     /// T of a collection, or as the TKey or TValue of a dictionary.
     /// </summary>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL
     [Serializable]
 #endif
     public struct Pair<TFirst, TSecond> : IComparable, IComparable<Pair<TFirst, TSecond>>

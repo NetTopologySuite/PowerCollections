@@ -28,9 +28,7 @@ namespace Wintellect.PowerCollections
     /// the items in sorted order.</p>
     ///</remarks>
     ///<seealso cref="OrderedSet&lt;T&gt;"/>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL
     [Serializable]
 #endif
     public class Set<T> : CollectionBase<T>, ICollection<T>

@@ -23,9 +23,7 @@ namespace Wintellect.PowerCollections
     /// <typeparam name="TValue">The of values associated with the keys.</typeparam>
     ///<seealso cref="Dictionary&lt;TKey,TValue&gt;"/>
     ///<seealso cref="OrderedMultiDictionary&lt;TKey,TValue&gt;"/>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL
     [Serializable]
 #endif
     public class MultiDictionary<TKey, TValue> : MultiDictionaryBase<TKey, TValue>
@@ -53,9 +51,7 @@ namespace Wintellect.PowerCollections
         /// The number of values must always be 1 or greater in a version that is stored, but 
         /// can be zero in a dummy version used only for lookups.
         /// </summary>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL
     [Serializable]
 #endif
         private struct KeyAndValues
@@ -111,9 +107,7 @@ namespace Wintellect.PowerCollections
         /// This class implements IEqualityComparer for KeysAndValues, allowing them to be
         /// compared by their keys. An IEqualityComparer on keys is required.
         /// </summary>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL
     [Serializable]
 #endif
         private class KeyAndValuesEqualityComparer : IEqualityComparer<KeyAndValues>

@@ -25,9 +25,7 @@ namespace Wintellect.PowerCollections
     /// <typeparam name="TValue">The of values associated with the keys.</typeparam>
     ///<seealso cref="MultiDictionary&lt;TKey,TValue&gt;"/>
     ///<seealso cref="OrderedDictionary&lt;TKey,TValue&gt;"/>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL
     [Serializable]
 #endif
     public class OrderedMultiDictionary<TKey, TValue> : MultiDictionaryBase<TKey, TValue>
@@ -641,9 +639,7 @@ namespace Wintellect.PowerCollections
         /// A private class that implements ICollection&lt;KeyValuePair&lt;TKey,TValue&gt;&gt; and ICollection for the
         /// KeyValuePairs collection. The collection is read-only.
         /// </summary>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL
     [Serializable]
 #endif
         private sealed class KeyValuePairsCollection : ReadOnlyCollectionBase<KeyValuePair<TKey, TValue>>
@@ -801,9 +797,7 @@ namespace Wintellect.PowerCollections
         /// }
         ///</code>
         ///</remarks>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL
     [Serializable]
 #endif
         public class View : MultiDictionaryBase<TKey, TValue>

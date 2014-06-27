@@ -28,9 +28,7 @@ namespace Wintellect.PowerCollections
     /// the items in sorted order.</p>
     ///</remarks>
     ///<seealso cref="Set&lt;T&gt;"/>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL    
     [Serializable]
 #endif
     public class OrderedSet<T> : CollectionBase<T>, ICollection<T>
@@ -959,9 +957,7 @@ namespace Wintellect.PowerCollections
         /// The nested class that provides a read-only list view
         /// of all or part of the collection.
         /// </summary>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL
     [Serializable]
 #endif
         private class ListView : ReadOnlyListBase<T>
@@ -1189,9 +1185,7 @@ namespace Wintellect.PowerCollections
         /// }
         ///</code>
         ///</remarks>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL
     [Serializable]
 #endif
         public class View : CollectionBase<T>, ICollection<T>

@@ -31,9 +31,7 @@ namespace Wintellect.PowerCollections
     /// the keys in sorted order.</p>
     ///</remarks>
     ///<seealso cref="Bag&lt;T&gt;"/>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL
     [Serializable]
 #endif
     public class OrderedBag<T> : CollectionBase<T>
@@ -1152,9 +1150,7 @@ namespace Wintellect.PowerCollections
         /// The nested class that provides a read-only list view
         /// of all or part of the collection.
         /// </summary>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL
     [Serializable]
 #endif
         private class ListView : ReadOnlyListBase<T>
@@ -1382,9 +1378,7 @@ namespace Wintellect.PowerCollections
         /// }
         ///</code>
         ///</remarks>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL
     [Serializable]
 #endif
         public class View : CollectionBase<T>

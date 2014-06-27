@@ -64,9 +64,7 @@ namespace Wintellect.PowerCollections
         /// Wrap an enumerable so that clients can't get to the underlying 
         /// implementation via a down-cast.
         /// </summary>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL
     [Serializable]
 #endif
         class WrapEnumerable<T> : IEnumerable<T>

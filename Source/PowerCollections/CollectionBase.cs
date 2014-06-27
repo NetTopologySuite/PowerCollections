@@ -25,9 +25,7 @@ namespace Wintellect.PowerCollections
     /// may not be very efficient.</para>
     /// </remarks>
     /// <typeparam name="T">The item type of the collection.</typeparam>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL    
     [Serializable]
 #endif
     [DebuggerDisplay("{DebuggerDisplayString()}")]

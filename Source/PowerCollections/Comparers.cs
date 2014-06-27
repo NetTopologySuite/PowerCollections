@@ -20,9 +20,7 @@ namespace Wintellect.PowerCollections
         /// Class to change an IEqualityComparer&lt;TKey&gt; to an IEqualityComparer&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; 
         /// Only the keys are compared.
         /// </summary>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL    
     [Serializable]
 #endif
 
@@ -59,9 +57,7 @@ namespace Wintellect.PowerCollections
         /// Class to change an IComparer&lt;TKey&gt; to an IComparer&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; 
         /// Only the keys are compared.
         /// </summary>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL    
     [Serializable]
 #endif
         class KeyValueComparer<TKey, TValue> : IComparer<KeyValuePair<TKey, TValue>>
@@ -92,9 +88,7 @@ namespace Wintellect.PowerCollections
         /// Class to change an IComparer&lt;TKey&gt; and IComparer&lt;TValue&gt; to an IComparer&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; 
         /// Keys are compared, followed by values.
         /// </summary>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL    
     [Serializable]
 #endif
         class PairComparer<TKey, TValue> : IComparer<KeyValuePair<TKey, TValue>>
@@ -136,9 +130,7 @@ namespace Wintellect.PowerCollections
         /// <summary>
         /// Class to change an Comparison&lt;T&gt; to an IComparer&lt;T&gt;.
         /// </summary>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL    
     [Serializable]
 #endif
         class ComparisonComparer<T> : IComparer<T>
@@ -169,9 +161,7 @@ namespace Wintellect.PowerCollections
         /// Class to change an Comparison&lt;TKey&gt; to an IComparer&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.
         /// GetHashCode cannot be used on this class.
         /// </summary>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL    
     [Serializable]
 #endif
         class ComparisonKeyValueComparer<TKey, TValue> : IComparer<KeyValuePair<TKey, TValue>>

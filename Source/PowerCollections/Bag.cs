@@ -32,9 +32,7 @@ namespace Wintellect.PowerCollections
     /// the items in sorted order, and stores distinct copies of items that compare equal.</p>
     ///</remarks>
     ///<seealso cref="OrderedBag&lt;T&gt;"/>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL    
     [Serializable]
 #endif
     public class Bag<T> : CollectionBase<T>

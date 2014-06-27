@@ -27,9 +27,7 @@ namespace Wintellect.PowerCollections
 	/// the keys in sorted order.</p>
 	///</remarks>
     ///<seealso cref="Dictionary&lt;TKey,TValue&gt;"/>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL
     [Serializable]
 #endif
     public class OrderedDictionary<TKey,TValue>: DictionaryBase<TKey,TValue>
@@ -657,9 +655,7 @@ namespace Wintellect.PowerCollections
         /// }
         ///</code>
         ///</remarks>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL
     [Serializable]
 #endif
         public class View : DictionaryBase<TKey, TValue>

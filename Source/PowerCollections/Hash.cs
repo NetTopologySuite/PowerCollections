@@ -11,7 +11,6 @@ using System.Diagnostics;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-
 namespace Wintellect.PowerCollections
 {
     /// <summary>
@@ -24,9 +23,7 @@ namespace Wintellect.PowerCollections
     /// The Hash manages items of type T, and uses a IComparer&lt;ItemTYpe&gt; that
     /// hashes compares items to hash items into the table.  
     ///</remarks>
-#if PCL
-    [System.Runtime.Serialization.DataContract]
-#else
+#if !PCL    
     [Serializable]
 #endif
 
