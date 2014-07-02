@@ -115,7 +115,9 @@
     <Compile Include="..\PowerCollections\Util.cs">
       <Link>Util.cs</Link>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\PowerCollections\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\PowerCollections.snk">

@@ -1,30 +1,41 @@
-﻿using System.Resources;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
+﻿//******************************
+// Written by Peter Golde
+// Copyright (c) 2004-2005, Wintellect
+//
+// Use and restribution of this code is subject to the license agreement 
+// contained in the file "License.txt" accompanying this file.
+//******************************
 
-// Allgemeine Informationen über eine Assembly werden über folgende 
-// Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
-// die einer Assembly zugeordnet sind.
-[assembly: AssemblyTitle("PowerCollections.Pcl2")]
-[assembly: AssemblyDescription("")]
+using System.Reflection;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("Wintellect.PowerCollections")]
+[assembly: AssemblyDescription("The Power Collections group of collection classes.")]
+#if DEBUG
+[assembly: AssemblyConfiguration("DEBUG")]
+#else
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PowerCollections.Pcl2")]
-[assembly: AssemblyCopyright("Copyright ©  2013")]
+#endif
+[assembly: AssemblyCompany("Wintellect")]
+[assembly: AssemblyProduct("Power Collections")]
+[assembly: AssemblyCopyright("Copyright (c) 2004-2005, Wintellect")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: NeutralResourcesLanguage("de")]
 
-// Versionsinformationen für eine Assembly bestehen aus den folgenden vier Werten:
 //
-//      Hauptversion
-//      Nebenversion 
-//      Buildnummer
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
 //      Revision
 //
-// Sie können alle Werte angeben oder die standardmäßigen Build- und Revisionsnummern 
-// durch Einsatz von '*', wie in nachfolgendem Beispiel:
-// [assembly: AssemblyVersion("1.0.*")]
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+//[assembly: InternalsVisibleTo("UnitTests")]
