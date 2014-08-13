@@ -42,21 +42,21 @@
     <Optimize>false</Optimize>
     <OutputPath>$(SolutionDir)$(Configuration)\$(TargetFrameworkIdentifier)$(TargetFrameworkVersion)\$(Platform)\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DocumentationFile>
-    </DocumentationFile>
+    <DocumentationFile>$(OutputPath)PowerCollections.XML</DocumentationFile>
     <BaseAddress>1239678976</BaseAddress>
     <NoWarn>
     </NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugSymbols>false</DebugSymbols>
+    <DebugSymbols>true</DebugSymbols>
     <Optimize>true</Optimize>
     <OutputPath>$(SolutionDir)$(Configuration)\$(TargetFrameworkIdentifier)$(TargetFrameworkVersion)\$(Platform)\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
-    <DocumentationFile>..\..\Release\v4.0\AnyCPU\PowerCollections.XML</DocumentationFile>
+    <DocumentationFile>$(OutputPath)PowerCollections.XML</DocumentationFile>
     <BaseAddress>1239678976</BaseAddress>
     <NoWarn>
     </NoWarn>
+    <DebugType>pdbonly</DebugType>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>..\PowerCollections.snk</AssemblyOriginatorKeyFile>
