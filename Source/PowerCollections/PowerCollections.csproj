@@ -42,7 +42,8 @@
     <Optimize>false</Optimize>
     <OutputPath>$(SolutionDir)$(Configuration)\$(TargetFrameworkIdentifier)$(TargetFrameworkVersion)\$(Platform)\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DocumentationFile>$(OutputPath)PowerCollections.XML</DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
     <BaseAddress>1239678976</BaseAddress>
     <NoWarn>
     </NoWarn>
@@ -52,7 +53,7 @@
     <Optimize>true</Optimize>
     <OutputPath>$(SolutionDir)$(Configuration)\$(TargetFrameworkIdentifier)$(TargetFrameworkVersion)\$(Platform)\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
-    <DocumentationFile>$(OutputPath)PowerCollections.XML</DocumentationFile>
+    <DocumentationFile>..\Release\v4.0\AnyCPU\PowerCollections.xml</DocumentationFile>
     <BaseAddress>1239678976</BaseAddress>
     <NoWarn>
     </NoWarn>
