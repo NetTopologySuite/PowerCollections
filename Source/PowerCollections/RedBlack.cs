@@ -694,45 +694,7 @@ namespace Wintellect.PowerCollections
         /// <exception cref="InvalidOperationException">The tree has an item added or deleted during the enumeration.</exception>
         public IEnumerable<T> EnumerateRange(RangeTester rangeTester)
         {
-            return EnumerateRangeInOrder(rangeTester, root);
-        }
-
-        /// <summary>
-        /// Enumerate all the items in a custom range, under and including node, in-order.
-        /// </summary>
-        /// <param name="rangeTester">Tests an item against the custom range.</param>
-        /// <param name="node">Node to begin enumeration. May be null.</param>
-        /// <returns>An enumerable of the items.</returns>
-        /// <exception cref="InvalidOperationException">The tree has an item added or deleted during the enumeration.</exception>
-        private IEnumerable<T> EnumerateRangeInOrder(RangeTester rangeTester, Node node)
-        {
-            int startStamp = changeStamp;
-
-            if (node != null) {
-                int compare = rangeTester(node.item);
-
-                if (compare >= 0) {
-                    // At least part of the range may lie to the left.
-                    foreach (T item in EnumerateRangeInOrder(rangeTester, node.left)) {
-                        yield return item;
-                        CheckEnumerationStamp(startStamp);
-                    }
-                }
-
-                if (compare == 0) {
-                    // The item is within the range.
-                    yield return node.item;
-                    CheckEnumerationStamp(startStamp);
-                }
-
-                if (compare <= 0) {
-                    // At least part of the range lies to the right.
-                    foreach (T item in EnumerateRangeInOrder(rangeTester, node.right)) {
-                        yield return item;
-                        CheckEnumerationStamp(startStamp);
-                    }
-                }
-            }
+            return EnumerateRange(rangeTester, false);
         }
 
         /// <summary>
@@ -744,43 +706,55 @@ namespace Wintellect.PowerCollections
         /// <exception cref="InvalidOperationException">The tree has an item added or deleted during the enumeration.</exception>
         public IEnumerable<T> EnumerateRangeReversed(RangeTester rangeTester)
         {
-            return EnumerateRangeInReversedOrder(rangeTester, root);
+            return EnumerateRange(rangeTester, true);
         }
 
         /// <summary>
-        /// Enumerate all the items in a custom range, under and including node, in reversed order.
+        /// Enumerate all the items in a custom range, optionally reversing the order.
         /// </summary>
         /// <param name="rangeTester">Tests an item against the custom range.</param>
-        /// <param name="node">Node to begin enumeration. May be null.</param>
-        /// <returns>An enumerable of the items, in reversed oreder.</returns>
+        /// <param name="reversed">Indicates whether or not to reverse the order.</param>
+        /// <returns>An enumerable of the items.</returns>
         /// <exception cref="InvalidOperationException">The tree has an item added or deleted during the enumeration.</exception>
-        private IEnumerable<T> EnumerateRangeInReversedOrder(RangeTester rangeTester, Node node)
+        private IEnumerable<T> EnumerateRange(RangeTester rangeTester, bool reversed)
         {
             int startStamp = changeStamp;
+            Stack<Node> stack = new Stack<Node>(2 * Util.LogBase2(unchecked((uint)count + 1)));
+            Node current = root;
 
-            if (node != null) {
-                int compare = rangeTester(node.item);
+            while (current != null) {
+                stack.Push(current);
 
-                if (compare <= 0) {
-                    // At least part of the range lies to the right.
-                    foreach (T item in EnumerateRangeInReversedOrder(rangeTester, node.right)) {
-                        yield return item;
-                        CheckEnumerationStamp(startStamp);
-                    }
-                }
+                // if we just pushed an item outside the range, then we can stop
+                // here, since we'd otherwise just go further outside the range.
+                // note, we have to wait until *after* we push one outside the
+                // range, because there might be some nodes under it in the
+                // opposite direction that are inside the range.
+                int range = rangeTester(current.item);
+                if (reversed ? range > 0 : range < 0)
+                    break;
 
-                if (compare == 0) {
-                    // The item is within the range.
-                    yield return node.item;
+                current = reversed ? current.right : current.left;
+            }
+
+            while (stack.Count != 0) {
+                current = stack.Pop();
+
+                if (rangeTester(current.item) == 0) {
+                    yield return current.item;
                     CheckEnumerationStamp(startStamp);
                 }
 
-                if (compare >= 0) {
-                    // At least part of the range may lie to the left.
-                    foreach (T item in EnumerateRangeInReversedOrder(rangeTester, node.left)) {
-                        yield return item;
-                        CheckEnumerationStamp(startStamp);
-                    }
+                current = reversed ? current.left : current.right;
+                while (current != null) {
+                    stack.Push(current);
+
+                    // same as before
+                    int range = rangeTester(current.item);
+                    if (reversed ? range > 0 : range < 0)
+                        break;
+
+                    current = reversed ? current.right : current.left;
                 }
             }
         }
